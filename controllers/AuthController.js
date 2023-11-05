@@ -16,7 +16,7 @@ const registerSchema = Joi.object({
     email: Joi.string().email().required(),
     avatar: Joi.string().required(),
     age: Joi.number().required(),
-    sex: Joi.string().required(),
+    gender: Joi.string().required(),
     phone: Joi.string().required(),
     role: Joi.string().valid('admin', 'proprietaire', 'etudiant').required(),
 });
@@ -42,7 +42,7 @@ const register = (req, res, next) => {
             email: req.body.email,
             avatar: req.body.avatar,
             age: req.body.age,
-            sex: req.body.sex,
+            gender: req.body.gender,
             phone: req.body.phone,
             role: req.body.role, // "admin", "proprietaire", "etudiant"
         });
